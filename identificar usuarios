@@ -1,0 +1,9 @@
+for arquivo in `ls $1`
+do
+  if test -d "$1/$arquivo"
+  then
+    echo "$arquivo (dir)"
+  else
+    echo "$arquivo"
+  fi
+done
