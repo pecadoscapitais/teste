@@ -1,0 +1,36 @@
+if [ $# -ne 3 ]; then
+  read -p "Entre com o operando: " valor1
+
+  read -p "Entre com o operador: " operacao
+
+  read -p "Entre com o segundo operando: " valor2
+
+else
+
+ valor1=$1
+ operacao=$2
+ valor2=$3
+
+fi
+
+case "$operacao" in
+  +)
+    resultado=$((valor1 + valor2))
+    ;;
+  -)
+    resultado=$((valor1 - valor2))
+    ;;
+  x | X | "*")
+    resultado=$((valor1 * valor2))
+    ;;
+  /)
+    if [ "$valor2" -eq 0 ]; then
+      echo "Divisão por zero não é compatível."
+      exit 1
+    else
+      resultado=$((valor1 / valor2))
+    fi
+
+esac
+
+echo "Operação $valor1 $operacao $valor2 = $resultado"
