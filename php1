@@ -1,0 +1,30 @@
+<?php
+
+safadometro(0,0,0);
+
+ function safadometro(int $dia, int $mes, int $ano){
+
+ $dia = readline("que dia você nasceu?\n");
+ $mes = readline("que mês você nasceu?\n");
+ $ano = readline("que ano você nasceu?\n");
+
+    $ano = $ano % 100;
+    $safadeza = somatorio($mes) + ($ano/100) * (50 - $dia);
+    $anjeza = 100 - $safadeza;
+
+    print("você é $anjeza% anjo perfeito, mas $safadeza% nazista\n");
+ }
+
+ function somatorio(int $mes) : int {
+
+ $somatorio = 0;
+
+ for ($i=1; $i <= $mes; $i++) {
+  $somatorio += $i;
+ }
+
+ return $somatorio;
+
+ }
+
+?>
