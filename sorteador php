@@ -1,0 +1,20 @@
+<?php
+
+    $chute = 0;
+    $sorteado = rand(1, 100);
+
+    while ($chute != $sorteado) {
+
+        $chute = (int) readline("digite um número: ");
+
+     if ($chute == $sorteado){
+        print("você venceu");
+    } else{
+        
+        if($chute > $sorteado){
+            print("valor muito alto\n");
+        } else{
+            print("valor muito baixo\n");
+        }
+    }
+}
